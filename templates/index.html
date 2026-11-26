@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HeartCare | Personal Health Assessment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-mark">♥</span>
+      <span>heart<span class="brand-light">care</span><small>YOUR WELLNESS COMPANION</small></span>
+    </a>
+    <span class="top-note"><span class="live-dot"></span> EDUCATIONAL HEALTH CHECK</span>
+  </div>
+
+  <main class="page-wrap">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> A MOMENT FOR YOUR HEALTH</div>
+        <h1>Know your habits.<br><em>Care for your heart.</em></h1>
+        <p>Share a few details about your health and daily routine. HeartCare will organize your answers into a simple educational report with helpful next steps.</p>
+        <div class="hero-points">
+          <span><b>✓</b> Simple questionnaire</span>
+          <span><b>✓</b> Personalised suggestions</span>
+          <span><b>✓</b> Clear results</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="heart-circle"><span>♥</span></div>
+        <div class="pulse-card"><span class="pulse-icon">⌁</span><span><b>Heart health</b><small>Starts with awareness</small></span></div>
+        <div class="tiny-card"><span class="tiny-dot"></span> YOUR WELLNESS MATTERS</div>
+      </div>
+    </section>
+
+    <div class="content-grid">
+      <aside class="side-info">
+        <div class="side-card">
+          <div class="side-icon">✦</div>
+          <h3>A little check-in</h3>
+          <p>Answer as accurately as you can. If you do not know a result, choose “Don't know” where available.</p>
+          <div class="side-divider"></div>
+          <div class="side-stat"><strong>4</strong><span>short sections<br>to complete</span></div>
+          <div class="side-stat"><strong>1</strong><span>personalised<br>summary</span></div>
+        </div>
+        <div class="privacy-note"><span>⌑</span><p><b>Your answers</b><br>Use sample information for demonstrations. Avoid entering identifying personal details.</p></div>
+      </aside>
+
+      <div class="main-column">
+        <div class="form-heading">
+          <div><span class="section-kicker">HEARTCARE CHECK-IN</span><h2>Tell us about your health</h2></div>
+          <span class="required-note"><i>*</i> Required fields</span>
+        </div>
+
+        <form method="POST" id="healthForm">
+          <section class="form-section">
+            <div class="section-title">
+              <span class="number">01</span>
+              <div><h3>About you</h3><p>A few basic details to understand your measurements.</p></div>
+            </div>
+            <div class="field-grid three">
+              <div class="field"><label for="age">Age <i>*</i></label><div class="input-wrap"><input id="age" type="number" name="age" min="18" max="110" placeholder="e.g. 30" required></div><small>For this educational form: 18–110</small></div>
+              <div class="field"><label for="height">Height (cm) <i>*</i></label><input id="height" type="number" name="height" min="120" max="230" placeholder="e.g. 165" required></div>
+              <div class="field"><label for="weight">Weight (kg) <i>*</i></label><input id="weight" type="number" name="weight" min="25" max="300" step="0.1" placeholder="e.g. 65" required></div>
+            </div>
+            <div class="field gender-field"><label for="gender">Gender</label><select id="gender" name="gender"><option value="prefer_not">Prefer not to say</option><option value="female">Female</option><option value="male">Male</option><option value="other">Other</option></select></div>
+          </section>
+
+          <section class="form-section">
+            <div class="section-title">
+              <span class="number">02</span>
+              <div><h3>Medical information</h3><p>Enter known readings or choose “Don't know”.</p></div>
+            </div>
+            <div class="field-grid two">
+              <div class="field"><label for="systolic">Systolic blood pressure <i>*</i></label><div class="unit-input"><input id="systolic" type="number" name="systolic" min="60" max="260" placeholder="e.g. 120" required><span>mmHg</span></div></div>
+              <div class="field"><label for="diastolic">Diastolic blood pressure <i>*</i></label><div class="unit-input"><input id="diastolic" type="number" name="diastolic" min="30" max="160" placeholder="e.g. 80" required><span>mmHg</span></div></div>
+              <div class="field"><label for="cholesterol">Cholesterol</label><select id="cholesterol" name="cholesterol"><option value="normal">Normal</option><option value="high">High</option><option value="unknown">Don't know</option></select></div>
+              <div class="field"><label for="glucose">Blood glucose</label><select id="glucose" name="glucose"><option value="normal">Normal</option><option value="high">High</option><option value="unknown">Don't know</option></select></div>
+              <div class="field"><label for="diabetes">Do you have diabetes?</label><select id="diabetes" name="diabetes"><option value="no">No</option><option value="yes">Yes</option></select></div>
+              <div class="field"><label for="family">Family history of heart disease?</label><select id="family" name="family"><option value="no">No</option><option value="yes">Yes</option></select></div>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <div class="section-title">
+              <span class="number">03</span>
+              <div><h3>Lifestyle information</h3><p>Your everyday habits can be useful to discuss with a professional.</p></div>
+            </div>
+            <div class="field-grid two">
+              <div class="field"><label for="smoking">Do you smoke?</label><select id="smoking" name="smoking"><option value="no">No</option><option value="yes">Yes</option></select></div>
+              <div class="field"><label for="alcohol">Alcohol consumption</label><select id="alcohol" name="alcohol"><option value="never">Never</option><option value="sometimes">Sometimes</option><option value="often">Frequently</option></select></div>
+              <div class="field"><label for="exercise">Exercise days per week <i>*</i></label><div class="unit-input"><input id="exercise" type="number" name="exercise" min="0" max="7" placeholder="e.g. 3" required><span>days</span></div></div>
+              <div class="field"><label for="sleep">Sleep hours per day <i>*</i></label><div class="unit-input"><input id="sleep" type="number" name="sleep" min="0" max="24" step="0.5" placeholder="e.g. 7.5" required><span>hours</span></div></div>
+              <div class="field"><label for="sitting">Sitting hours per day <i>*</i></label><div class="unit-input"><input id="sitting" type="number" name="sitting" min="0" max="24" placeholder="e.g. 6" required><span>hours</span></div></div>
+              <div class="field"><label for="diet">Food habits</label><select id="diet" name="diet"><option value="healthy">Mostly balanced meals</option><option value="poor">Frequent fried or processed foods</option></select></div>
+              <div class="field"><label for="stress">Stress level</label><select id="stress" name="stress"><option value="low">Low</option><option value="medium">Moderate</option><option value="high">High</option></select></div>
+            </div>
+          </section>
+
+          <section class="form-section symptoms-section">
+            <div class="section-title">
+              <span class="number alert-number">04</span>
+              <div><h3>Current symptoms</h3><p>Please answer about how you feel right now.</p></div>
+            </div>
+            <div class="medical-alert"><span class="alert-symbol">!</span><p><b>Important safety notice</b><br>If you currently have chest pain, severe breathing difficulty or fainting, seek emergency medical help now. Do not wait for this questionnaire.</p></div>
+            <div class="field-grid two">
+              <div class="field"><label for="chest">Current chest pain or discomfort?</label><select id="chest" name="chest"><option value="no">No</option><option value="yes">Yes</option></select></div>
+              <div class="field"><label for="breathing">Current severe breathing difficulty?</label><select id="breathing" name="breathing"><option value="no">No</option><option value="yes">Yes</option></select></div>
+              <div class="field"><label for="fainting">Currently fainting or feeling you may faint?</label><select id="fainting" name="fainting"><option value="no">No</option><option value="yes">Yes</option></select></div>
+            </div>
+          </section>
+
+          <div class="submit-area">
+            <div class="submit-copy"><span>♡</span><p><b>Small steps start with awareness.</b><br>Your answers will be used to create an educational summary.</p></div>
+            <button type="submit">Generate my report <span>→</span></button>
+          </div>
+        </form>
+
+        {% if result %}
+        <section class="result-panel" id="report">
+          {% if result.error %}
+            <div class="result-header"><span class="result-label">CHECK YOUR ENTRIES</span><h2>One moment — something needs attention</h2><p>{{ result.error }}</p></div>
+          {% else %}
+            <div class="result-header"><span class="result-label">YOUR HEARTCARE SUMMARY</span><h2>Your report is ready</h2><p>This is an educational checklist based on the information entered.</p></div>
+            {% if result.emergency %}
+              <div class="emergency"><h3>Seek emergency medical help now</h3><p>Do not rely on this website. In India, call 112 or contact local emergency services.</p></div>
+            {% else %}
+              <div class="category {{ result.level }}"><span class="category-caption">QUESTIONNAIRE CATEGORY</span><h3>{{ result.category }}</h3><p>This reflects the number of factors flagged by this simple checklist, not a medical risk score.</p></div>
+            {% endif %}
+            <div class="bmi-card"><span class="bmi-icon">↗</span><div><small>YOUR CALCULATED BMI</small><strong>{{ result.bmi }} <small>kg/m²</small></strong></div></div>
+            <div class="result-columns">
+              <div><h3>Factors identified</h3>{% if result.factors %}<ul>{% for factor in result.factors %}<li>{{ factor }}</li>{% endfor %}</ul>{% else %}<p>No factors were flagged by this checklist. This does not rule out a health condition.</p>{% endif %}</div>
+              <div><h3>Helpful next steps</h3><ul>{% for suggestion in result.suggestions %}<li>{{ suggestion }}</li>{% endfor %}</ul></div>
+            </div>
+            <p class="result-disclaimer"></p>
+          {% endif %}
+        </section>
+        {% endif %}
+      </div>
+    </div>
+  </main>
+
+  <footer><a class="footer-brand" href="/">♥ HeartCare</a><span></span><span></span></footer>
+  <script>
+    const form = document.getElementById('healthForm');
+    form.addEventListener('submit', function () {
+      const button = form.querySelector('button[type="submit"]');
+      button.classList.add('loading');
+      button.innerHTML = 'Preparing your report <span>…</span>';
+    });
+    const report = document.getElementById('report');
+    if (report) report.scrollIntoView({behavior: 'smooth', block: 'start'});
+  </script>
+</body>
+</html>

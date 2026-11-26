@@ -1,0 +1,102 @@
+*{box-sizing:border-box}
+:root{--ink:#183447;--muted:#718391;--teal:#168d88;--teal-dark:#0d706f;--line:#e5edf0;--pale:#eff8f7;--coral:#f27b70}
+body{margin:0;background:#f6f9fa;color:var(--ink);font-family:"DM Sans",Arial,sans-serif;font-size:14px}
+.topbar{height:76px;background:#fff;border-bottom:1px solid #edf1f3;display:flex;align-items:center;justify-content:space-between;padding:0 max(calc((100vw - 1160px)/2),28px)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font:800 21px "Manrope",sans-serif;letter-spacing:-.8px}
+.brand-mark{width:38px;height:38px;border-radius:12px;background:#e7f5f3;color:var(--teal);display:grid;place-items:center;font-size:23px}
+.brand-light{color:var(--teal)}
+.brand small{display:block;font:700 8px "DM Sans",sans-serif;letter-spacing:1.7px;color:#8a9aa4;margin-top:1px}
+.top-note{font-size:10px;font-weight:700;letter-spacing:1.3px;color:#6c818d;display:flex;align-items:center;gap:9px}
+.live-dot{width:7px;height:7px;background:#48b99a;border-radius:50%;box-shadow:0 0 0 4px #e8f7f1}
+.page-wrap{max-width:1160px;margin:0 auto;padding:34px 28px 70px}
+.hero{min-height:270px;border-radius:22px;background:linear-gradient(115deg,#123e50 0%,#176b70 58%,#218e88 100%);color:white;padding:42px 50px;display:flex;justify-content:space-between;align-items:center;overflow:hidden;position:relative;box-shadow:0 15px 35px #174d5c20}
+.hero:after{content:"";position:absolute;width:440px;height:440px;border:1px solid #ffffff18;border-radius:50%;right:90px;top:-255px}
+.hero-copy{max-width:610px;position:relative;z-index:2}
+.eyebrow,.section-kicker,.result-label{font-size:10px;letter-spacing:2px;font-weight:700}
+.eyebrow{color:#a8ded7;display:flex;align-items:center;gap:10px}
+.eyebrow-line{width:23px;height:2px;background:#82d1c5}
+.hero h1{font:800 clamp(30px,4vw,43px)/1.15 "Manrope",sans-serif;letter-spacing:-1.7px;margin:16px 0 12px}
+.hero h1 em{font-style:normal;color:#9ce0d4}
+.hero-copy>p{max-width:550px;color:#d2e6e6;line-height:1.7;margin:0;font-size:14px}
+.hero-points{display:flex;gap:20px;flex-wrap:wrap;margin-top:24px;color:#e5f4f2;font-size:11px}
+.hero-points b{color:#91e0ce;margin-right:5px}
+.hero-art{width:300px;height:220px;position:relative;flex-shrink:0;margin-right:25px}
+.heart-circle{position:absolute;width:132px;height:132px;border-radius:50%;background:linear-gradient(145deg,#ffffff35,#ffffff0a);border:1px solid #ffffff40;display:grid;place-items:center;left:82px;top:30px;box-shadow:0 0 0 16px #ffffff08,0 0 0 34px #ffffff05}
+.heart-circle span{font-size:67px;color:#ffaaa2;text-shadow:0 7px 20px #071f2b60}
+.orbit{position:absolute;border:1px solid #ffffff27;border-radius:50%;transform:rotate(-22deg)}
+.orbit-one{width:250px;height:105px;top:45px;left:20px}
+.orbit-two{width:215px;height:170px;top:8px;left:38px;transform:rotate(55deg)}
+.pulse-card{position:absolute;left:0;bottom:8px;background:#fff;color:var(--ink);padding:11px 14px;border-radius:12px;display:flex;align-items:center;gap:10px;box-shadow:0 10px 30px #092b3340}
+.pulse-icon{font-size:25px;color:var(--teal)}
+.pulse-card b,.pulse-card small{display:block}.pulse-card b{font:700 11px "Manrope"}.pulse-card small{font-size:9px;color:var(--muted);margin-top:3px}
+.tiny-card{position:absolute;right:-13px;top:17px;font-size:8px;letter-spacing:1px;color:#d9f3ed;background:#ffffff15;border:1px solid #ffffff30;padding:9px 11px;border-radius:20px}
+.tiny-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#9be1c8;margin-right:5px}
+.content-grid{display:grid;grid-template-columns:245px minmax(0,1fr);gap:28px;margin-top:30px;align-items:start}
+.side-info{position:sticky;top:20px}
+.side-card{background:#eaf5f4;border:1px solid #dcecea;border-radius:17px;padding:23px}
+.side-icon{width:36px;height:36px;border-radius:11px;background:#d4ece8;color:var(--teal);display:grid;place-items:center;font-size:20px}
+.side-card h3{font:700 17px "Manrope";margin:17px 0 8px}
+.side-card>p{color:#657b86;line-height:1.65;font-size:12px;margin:0}
+.side-divider{height:1px;background:#d7e7e5;margin:20px 0}
+.side-stat{display:flex;align-items:center;gap:12px;margin:13px 0}
+.side-stat strong{font:800 24px "Manrope";color:var(--teal)}
+.side-stat span{font-size:11px;line-height:1.35;color:#6b808a}
+.privacy-note{display:flex;gap:11px;margin:15px 4px;color:#84939c;font-size:11px;line-height:1.55}
+.privacy-note>span{color:var(--teal);font-size:20px}
+.privacy-note p{margin:0}.privacy-note b{color:#526a76}
+.main-column{min-width:0}
+.form-heading{display:flex;justify-content:space-between;align-items:end;margin:0 0 17px;padding:0 3px}
+.section-kicker{color:var(--teal);font-size:9px}
+.form-heading h2{font:800 24px "Manrope";letter-spacing:-.7px;margin:5px 0 0}
+.required-note{font-size:10px;color:#8797a0}.required-note i,.field label i{color:#e27870;font-style:normal}
+form,.result-panel{background:#fff;border:1px solid #e9eff1;border-radius:18px;box-shadow:0 8px 28px #1a43500a}
+.form-section{padding:26px 29px 29px;border-bottom:1px solid #edf1f2}
+.section-title{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.number{width:35px;height:35px;border-radius:11px;background:#e9f5f3;color:var(--teal);display:grid;place-items:center;font:800 12px "Manrope"}
+.section-title h3{font:700 16px "Manrope";margin:0 0 4px}
+.section-title p{font-size:11px;color:#87959d;margin:0}
+.field-grid{display:grid;gap:18px 16px}
+.field-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.field-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.field{min-width:0}
+.field label{display:block;font-size:11px;font-weight:700;color:#435967;margin-bottom:8px}
+.field input,.field select{width:100%;height:44px;border:1px solid #dfe8eb;border-radius:9px;background:#fbfdfd;padding:0 12px;color:#274252;font:500 12px "DM Sans";outline:none;transition:.2s}
+.field input::placeholder{color:#a8b5bb}
+.field input:focus,.field select:focus{border-color:#54aaa1;box-shadow:0 0 0 3px #e5f4f1;background:#fff}
+.field small{display:block;color:#96a3aa;font-size:9px;margin-top:6px}
+.gender-field{max-width:calc(50% - 8px);margin-top:17px}
+.unit-input{position:relative}.unit-input input{padding-right:58px}
+.unit-input span{position:absolute;right:12px;top:15px;font-size:10px;color:#92a0a7}
+.symptoms-section{background:#fffdfc}
+.alert-number{background:#fff0eb;color:#dc7968}
+.medical-alert{display:flex;gap:12px;background:#fff5ed;border:1px solid #f8e4d5;border-radius:11px;padding:14px 16px;margin:-3px 0 20px}
+.alert-symbol{width:22px;height:22px;flex:0 0 22px;border-radius:50%;background:#f5d7c5;color:#a65a3e;display:grid;place-items:center;font-weight:800}
+.medical-alert p{margin:0;color:#8c604d;font-size:11px;line-height:1.55}.medical-alert b{color:#75442f}
+.submit-area{padding:22px 29px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.submit-copy{display:flex;align-items:center;gap:10px}.submit-copy>span{font-size:24px;color:var(--teal)}
+.submit-copy p{font-size:10px;line-height:1.5;color:#82919a;margin:0}.submit-copy b{color:#385360}
+button{border:0;border-radius:10px;background:linear-gradient(110deg,#168f88,#167c82);color:white;padding:14px 21px;font:700 12px "DM Sans";cursor:pointer;box-shadow:0 7px 16px #168d882b;transition:.2s}
+button:hover{transform:translateY(-1px);box-shadow:0 10px 20px #168d8838}
+button span{font-size:17px;margin-left:12px;vertical-align:-1px}
+button.loading{opacity:.75;cursor:wait}
+.result-panel{margin-top:24px;padding:28px;scroll-margin-top:20px}
+.result-header h2{font:800 23px "Manrope";margin:7px 0}
+.result-header p{color:var(--muted);font-size:12px;margin:0 0 20px}
+.result-label{color:var(--teal);font-size:9px}
+.category,.emergency{border-radius:12px;padding:18px 20px;margin:18px 0}
+.category h3,.emergency h3{font:700 17px "Manrope";margin:5px 0}
+.category p,.emergency p{font-size:11px;line-height:1.6;margin:0}
+.category-caption{font-size:9px;font-weight:700;letter-spacing:1.3px}
+.low{background:#eaf6ee;color:#326c48}.moderate{background:#fff6e4;color:#88631e}.high{background:#fff0e8;color:#995b38}.urgent,.emergency{background:#ffebeb;color:#a12d2d}
+.bmi-card{display:inline-flex;align-items:center;gap:13px;padding:14px 19px;background:#eff7f7;border-radius:12px;margin:4px 0 20px}
+.bmi-icon{width:32px;height:32px;border-radius:9px;background:#d9eeeb;color:var(--teal);display:grid;place-items:center;font-size:19px}
+.bmi-card small{display:block;color:#81939a;font-size:9px;font-weight:700;letter-spacing:.8px}.bmi-card strong{display:block;font:800 20px "Manrope";margin-top:3px}.bmi-card strong small{display:inline;font-size:10px}
+.result-columns{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.result-columns>div{background:#fbfcfc;border:1px solid #edf1f2;border-radius:12px;padding:17px}
+.result-columns h3{font:700 13px "Manrope";margin:0 0 12px}
+.result-columns ul{padding-left:17px;margin:0}.result-columns li,.result-columns p{font-size:11px;color:#657984;line-height:1.6;margin-bottom:8px}
+.result-disclaimer{font-size:10px;line-height:1.6;color:#98a4aa;border-top:1px solid #edf1f2;padding-top:15px;margin:18px 0 0}
+footer{max-width:1160px;margin:0 auto;padding:22px 28px 30px;border-top:1px solid #e7edef;display:flex;align-items:center;justify-content:space-between;color:#9aa7ad;font-size:10px}
+.footer-brand{color:#54717c;text-decoration:none;font:800 13px "Manrope"}
+@media(max-width:850px){.hero{padding:35px}.hero-art{transform:scale(.8);transform-origin:center right;margin-right:-20px}.content-grid{grid-template-columns:1fr}.side-info{position:static}.side-card{display:none}.privacy-note{margin:0 2px 14px}.privacy-note p br{display:none}}
+@media(max-width:620px){.topbar{height:65px;padding:0 18px}.top-note{font-size:8px;letter-spacing:.7px}.page-wrap{padding:18px 14px 45px}.hero{padding:28px 24px;min-height:0}.hero-art{display:none}.hero h1{font-size:32px}.hero-points{gap:10px 15px}.content-grid{margin-top:20px;gap:12px}.form-heading{align-items:start;gap:10px}.form-heading h2{font-size:20px}.required-note{padding-top:15px;white-space:nowrap}.form-section{padding:22px 18px}.field-grid.two,.field-grid.three{grid-template-columns:1fr}.gender-field{max-width:none}.submit-area{padding:20px 18px;align-items:stretch;flex-direction:column}.submit-area button{width:100%}.result-panel{padding:20px}.result-columns{grid-template-columns:1fr}footer{padding:20px 15px;gap:10px;flex-wrap:wrap}footer span:last-child{width:100%}}
